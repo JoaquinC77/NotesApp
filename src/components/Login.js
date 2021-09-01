@@ -14,7 +14,7 @@ import {
     FormHelperText,
     Input,
     Button,
-    Link,
+    Link as LinkButton,
     ThemeProvider,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -22,6 +22,8 @@ import { Alert } from "@material-ui/lab";
 import { LinearProgress } from "@material-ui/core";
 
 import { VpnKey } from "@material-ui/icons";
+
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -33,11 +35,11 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.text.secondary,
     },
     grid: {
-        marginTop: 15
+        marginTop: 15,
     },
     titulos: {
-        color: theme.palette.grey[50]
-    }
+        color: theme.palette.grey[50],
+    },
 }));
 
 const Login = (props) => {
@@ -89,24 +91,15 @@ const Login = (props) => {
 
     return (
         <ThemeProvider theme={theme}>
-            <Container 
-                maxWidth="sm" 
-                align="center" 
-            >
+            <Container maxWidth="sm" align="center">
                 <Box marginTop={4}>
-                    <Typography 
-                        variant="h4"
-                        className={classes.titulos}
-                    >
+                    <Typography variant="h4" className={classes.titulos}>
                         Mi AppNotas
                     </Typography>
 
-                    <Grid 
-                        item xs={10}
-                        className={classes.grid}
-                    >
+                    <Grid item xs={10} className={classes.grid}>
                         <Paper className={classes.paper}>
-                            <Typography 
+                            <Typography
                                 variant="h5"
                                 className={classes.titulos}
                             >
@@ -167,11 +160,12 @@ const Login = (props) => {
                                 </form>
                                 <Grid container>
                                     <Grid item xs={3}>
-                                        <Link
-                                            color="textPrimary"
-                                            href="/nuevaCuenta"
-                                        >
-                                            Crear Cuenta
+                                        <Link to="/nuevaCuenta">
+                                            <LinkButton
+                                                color="textPrimary"
+                                            >
+                                                Crear Cuenta
+                                            </LinkButton>
                                         </Link>
                                     </Grid>
                                 </Grid>
