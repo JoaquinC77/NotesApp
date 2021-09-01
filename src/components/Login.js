@@ -164,7 +164,7 @@ const Login = (props) => {
                                             <LinkButton
                                                 color="textPrimary"
                                             >
-                                                Crear Cuenta
+                                                Crear Cuenta 
                                             </LinkButton>
                                         </Link>
                                     </Grid>
